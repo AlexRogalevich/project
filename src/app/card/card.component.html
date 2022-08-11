@@ -1,0 +1,51 @@
+<section class="section">
+<h1>Пример card</h1>
+<mat-card class="example-card addshadow" (mouseenter)="toggleElement()" (mouseleave)="toggleElement()" [ngClass]="{'addshadow': showElement.myelement}">
+    <mat-card-header>
+      <div mat-card-avatar class="myheader" title="Подарочный сертификат">
+        <mat-icon>card_giftcard</mat-icon>
+      </div>
+      <mat-card-title>Туфли летние</mat-card-title>
+      <mat-card-subtitle>Reiker man</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets/images/13.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+        <div class="stars" [ngClass]="{'addstars': showElement.myelement}">
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star</mat-icon>
+            <mat-icon>star_half</mat-icon>
+            <mat-icon>star_border</mat-icon>
+        </div>
+        
+      <p>
+        Материал верха: натуральная кожа
+      </p>
+      <p>Ограниченная серия</p>
+      <p><span class="price">148,0 руб.</span></p>
+      <ul>
+        <li>
+            <button mat-icon-button>
+                <mat-icon>lens</mat-icon>
+            </button>        
+        </li>
+        <li>
+            <button mat-icon-button>
+                <mat-icon>lens</mat-icon>
+            </button>        
+        </li>
+        <li>
+            <button mat-icon-button>
+                <mat-icon>lens</mat-icon>
+            </button>        
+        </li>
+      </ul>
+    </mat-card-content>
+    <mat-card-actions>
+     <p title="Добавить товар в корзину" class="mybutton" [ngClass]="{'addbutton': showElement.myelement}">
+        <a href="#">ДОБАВИТЬ В КОРЗИНУ</a>
+     </p>
+    </mat-card-actions>
+  </mat-card>
+</section>
+  
