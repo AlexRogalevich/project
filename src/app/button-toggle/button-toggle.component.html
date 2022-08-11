@@ -1,0 +1,165 @@
+<section class="section">
+<h1>Пример кнопки-переключателя</h1>
+<p>
+<mat-button-toggle-group #group="matButtonToggleGroup">
+    <mat-button-toggle matTooltip="Товары для мужчин" checked="" value="men">Для него</mat-button-toggle>
+    <mat-button-toggle matTooltip="Товары для женщин" value="women">Для неё</mat-button-toggle>
+    <mat-button-toggle matTooltip="Аксессуары" value="access">Аксессуары</mat-button-toggle>
+  </mat-button-toggle-group>
+</p>
+
+<div [ngSwitch]="group.value">
+
+    <div class="card_container" *ngSwitchCase="'men'">
+        <mat-card class="example-card ghost" *ngFor="let menwear of menWears; let i=index" (mouseenter)="toggleElement(i)" (mouseleave)="toggleElement(i)" [ngClass]="{'addshadow': showElement[i]}">
+            <mat-card-header>
+              <div mat-card-avatar class="myheader" title="{{ menwear.atitle }}" [ngStyle]="{'background': menwear.sales ? 'red' : 'green'}">
+                <mat-icon> {{ menwear.sales ? 'monetization_on' : 'card_giftcard' }}</mat-icon>
+              </div>
+              <mat-card-title>{{ menwear.htitle }}</mat-card-title>
+              <mat-card-subtitle>{{ menwear.hsubtitle }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/images/{{ menwear.image }}" alt="{{menwear.htitle}}">
+            <mat-card-content>
+                <div class="stars" [ngClass]="{'addstars': showElement[i]}">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star_half</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                </div>
+                
+              <p>
+                {{menwear.mtitle}}
+              </p>
+              <p>{{menwear.msubtitle}}</p>
+              <p> <span class="priceoff"> {{ menwear.sales ? menwear.price * 1.2 + 'руб.' : ''}} </span> <span class="price">{{menwear.price}} руб.</span></p>
+              <ul>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+              </ul>
+            </mat-card-content>
+            <mat-card-actions>
+             <p title="Добавить товар в корзину" class="mybutton" [ngClass]="{'addbutton': showElement[i]}">
+                <a href="#">ДОБАВИТЬ В КОРЗИНУ</a>
+             </p>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+
+    <div class="card_container" *ngSwitchCase="'women'">
+        <mat-card class="example-card ghost" *ngFor="let menwear of womenWears; let i=index" (mouseenter)="toggleElement(i)" (mouseleave)="toggleElement(i)" [ngClass]="{'addshadow': showElement[i]}">
+            <mat-card-header>
+              <div mat-card-avatar class="myheader" title="{{ menwear.atitle }}" [ngStyle]="{'background': menwear.sales ? 'red' : 'green'}">
+                <mat-icon> {{ menwear.sales ? 'monetization_on' : 'card_giftcard' }}</mat-icon>
+              </div>
+              <mat-card-title>{{ menwear.htitle }}</mat-card-title>
+              <mat-card-subtitle>{{ menwear.hsubtitle }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/images/{{ menwear.image }}" alt="{{menwear.htitle}}">
+            <mat-card-content>
+                <div class="stars" [ngClass]="{'addstars': showElement[i]}">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star_half</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                </div>
+                
+              <p>
+                {{menwear.mtitle}}
+              </p>
+              <p>{{menwear.msubtitle}}</p>
+              <p> <span class="priceoff"> {{ menwear.sales ? menwear.price * 1.2 + 'руб.' : ''}} </span> <span class="price">{{menwear.price}} руб.</span></p>
+              <ul>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+              </ul>
+            </mat-card-content>
+            <mat-card-actions>
+             <p title="Добавить товар в корзину" class="mybutton" [ngClass]="{'addbutton': showElement[i]}">
+                <a href="#">ДОБАВИТЬ В КОРЗИНУ</a>
+             </p>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+
+    <div class="card_container" *ngSwitchCase="'access'">
+        <mat-card class="example-card ghost" *ngFor="let menwear of accessories; let i=index" (mouseenter)="toggleElement(i)" (mouseleave)="toggleElement(i)" [ngClass]="{'addshadow': showElement[i]}">
+            <mat-card-header>
+              <div mat-card-avatar class="myheader" title="{{ menwear.atitle }}" [ngStyle]="{'background': menwear.sales ? 'red' : 'green'}">
+                <mat-icon> {{ menwear.sales ? 'monetization_on' : 'card_giftcard' }}</mat-icon>
+              </div>
+              <mat-card-title>{{ menwear.htitle }}</mat-card-title>
+              <mat-card-subtitle>{{ menwear.hsubtitle }}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="assets/images/{{ menwear.image }}" alt="{{menwear.htitle}}">
+            <mat-card-content>
+                <div class="stars" [ngClass]="{'addstars': showElement[i]}">
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star_half</mat-icon>
+                    <mat-icon>star_border</mat-icon>
+                </div>
+                
+              <p>
+                {{menwear.mtitle}}
+              </p>
+              <p>{{menwear.msubtitle}}</p>
+              <p> <span class="priceoff"> {{ menwear.sales ? menwear.price * 1.2 + 'руб.' : ''}} </span> <span class="price">{{menwear.price}} руб.</span></p>
+              <ul>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>lens</mat-icon>
+                    </button>        
+                </li>
+              </ul>
+            </mat-card-content>
+            <mat-card-actions>
+             <p title="Добавить товар в корзину" class="mybutton" [ngClass]="{'addbutton': showElement[i]}">
+                <a href="#">ДОБАВИТЬ В КОРЗИНУ</a>
+             </p>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+
+</div>
+
+</section>
