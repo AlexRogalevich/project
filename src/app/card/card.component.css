@@ -1,0 +1,101 @@
+.example-card {
+    max-width: 286px;
+    min-height: 545px;
+
+  }
+  
+  .myheader {
+    background: #7cc576;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .stars {
+    text-align: center;
+    position: relative;
+    top: -30px;
+    color: #ccc;
+  }
+
+  mat-card-content p {
+    text-align: center;
+    font-weight: bold;
+    line-height: .8;
+    color: #333;
+  }
+
+  .price {
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #f00;
+  }
+  
+  ul {
+    text-align: center;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+  }
+
+  li:nth-child(1) {
+    color: red;
+  }
+
+  li:nth-child(2) {
+    color: green;
+  }
+
+  .mybutton {
+        background: #ccc;
+        padding: 10px;
+        text-align: center;
+        margin: 0;
+        font-weight: bold;    
+        transition: .3s;
+        
+  }
+
+  .mybutton > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+.addshadow {
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24);
+  z-index: 1;
+}
+
+.addstars {
+  color: #ee1313;
+  animation: flyStars .5s;
+}
+@keyframes flyStars {
+
+  from {opacity: 0;}
+
+  50% {opacity: 0;}
+
+  70% {opacity: 0; 
+       transform: translateX(30%);
+  }
+
+  100% {opacity: 1;
+        transform: translateX(0);
+  }
+
+}
+
+.addbutton {
+  background: #ee1313;
+}
+
+.mybutton:hover {
+  background: #000;
+}
